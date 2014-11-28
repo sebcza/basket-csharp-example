@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Windows.UI.Xaml.Media.Animation;
 
@@ -6,14 +7,15 @@ namespace BasketPhone
 {
     public class DisplayData
     {
+        private List<Display> products = new List<Display>();
         public DisplayData()
         {
-
+            
             //MockedData
             Insert(new Display()
             {
                 Description = "Lg",
-                Id = 1,
+                Id = Guid.NewGuid().ToString(),
                 Name = "Lg",
                 Price = 120,
                 Resolution = "1600x900"
@@ -22,14 +24,14 @@ namespace BasketPhone
             Insert(new Display()
             {
                 Description = "Samsung",
-                Id = 2,
-                Name = "Lg",
+                Id = Guid.NewGuid().ToString(),
+                Name = "Samsung",
                 Price = 120,
                 Resolution = "1600x900"
             });
 
         }
-        private List<Display> products;
+        
 
         public void Insert(Display product)
         {
